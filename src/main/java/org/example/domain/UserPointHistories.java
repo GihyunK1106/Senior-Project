@@ -9,11 +9,11 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@Entity
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-@Table(name = "user_point_histories")
+//@Getter
+//@Setter
+//@Entity
+//@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+//@Table(name = "user_point_histories")
 public class UserPointHistories {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
