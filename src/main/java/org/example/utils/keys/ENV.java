@@ -40,15 +40,15 @@ public class ENV {
         AWS_S3_ORIGIN_DOMAIN = awsS3OriginDomain;
     }
 
-    @Value("${amazon.credential.accessKey}")
-    public void setAmazonCredentialAccessKey(String amazonCredentialAccessKey) {
-        AMAZON_CREDENTIAL_ACCESS_KEY = amazonCredentialAccessKey;
-    }
-
-    @Value("${amazon.credential.secretKey}")
-    public void setAmazonCredentialSecretKey(String amazonCredentialSecretKey) {
-        AMAZON_CREDENTIAL_SECRET_KEY = amazonCredentialSecretKey;
-    }
+//    @Value("${amazon.credential.accessKey}")
+//    public void setAmazonCredentialAccessKey(String amazonCredentialAccessKey) {
+//        AMAZON_CREDENTIAL_ACCESS_KEY = amazonCredentialAccessKey;
+//    }
+//
+//    @Value("${amazon.credential.secretKey}")
+//    public void setAmazonCredentialSecretKey(String amazonCredentialSecretKey) {
+//        AMAZON_CREDENTIAL_SECRET_KEY = amazonCredentialSecretKey;
+//    }
 
 
 }

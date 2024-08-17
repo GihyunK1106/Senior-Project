@@ -60,8 +60,6 @@ public class SignController extends OriginObject {
         User users = usersRepository.findByEmail(joinEmailRequest.getEmail());
         users.setName(joinEmailRequest.getName());
         users.setEmail(joinEmailRequest.getEmail());
-        users.setGender(joinEmailRequest.getGender().equals("male") ? true : false);
-        users.setBirth(LocalDateTime.parse(joinEmailRequest.getBirth(), dtf));
         usersRepository.save(users);
 
         UserPw userPassword = new UserPw();
@@ -166,8 +164,6 @@ public class SignController extends OriginObject {
         User session = request.getSession();
         response.setName(session.getName());
         response.setEmail(session.getEmail());
-        response.setGender(session.getGender() ? "MALE" : "FEMALE");
-        response.setBirth(session.getBirth().format(DateTimeFormatter.ofPattern("dd, MM, yyyy")));
         return response;
     }
 
@@ -178,8 +174,6 @@ public class SignController extends OriginObject {
         JoinRequest joinEmailRequest = map(request.getParam(), JoinRequest.class);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         User session = request.getSession();
-        session.setBirth(LocalDateTime.parse(joinEmailRequest.getBirth(), dtf));
-        session.setGender(joinEmailRequest.getGender().equals("male") ? true : false);
         usersRepository.save(session);
     }
 
@@ -190,7 +184,6 @@ public class SignController extends OriginObject {
     public void changeProfile(SessionRequest request){
         EditProfileReq editProfileReq = map(request.getParam(), EditProfileReq.class);
         User user = request.getSession();
-        user.setProfile(editProfileReq.getProfile());
         usersRepository.save(user);
     }
 
